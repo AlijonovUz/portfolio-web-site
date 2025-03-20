@@ -59,7 +59,7 @@
         </div>
         {% if comments %}
         <div class="comment-list">
-            {% for comment in comments %}
+            {% for comment in comments|slice:":5" %}
             <div class="comment-item">
                 <h4>{{ comment.name }} {{ comment.lastname }}</h4>
                 <p class="comment-date">{{ comment.created_at|date:"Y-m-d H:i" }}</p>

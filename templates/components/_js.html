@@ -12,3 +12,13 @@
 
 <!-- Template Main JS File -->
 <script src="{% static 'js/main.js' %}"></script>
+
+<script>
+    setTimeout(function() {
+        document.querySelectorAll('.alert').forEach(function(alert) {
+            alert.style.transition = "opacity 0.5s";
+            alert.style.opacity = "0";
+            setTimeout(() => alert.style.display = "none", 500);
+        });
+    }, 5000);
+</script>

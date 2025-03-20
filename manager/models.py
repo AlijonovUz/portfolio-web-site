@@ -40,3 +40,8 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.name} {self.lastname} - {self.portfolio}"
+
+    class Meta:
+        verbose_name = 'Izoh '
+        verbose_name_plural = 'Izohlar'
+        ordering = ['-created_at']

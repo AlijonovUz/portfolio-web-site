@@ -20,16 +20,6 @@
 
 <body>
 
-{% if messages %}
-<div class="alert-container">
-    {% for message in messages %}
-    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
-        {{ message }}
-    </div>
-    {% endfor %}
-</div>
-{% endif %}
-
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
@@ -54,6 +44,16 @@
 </header><!-- End Header -->
 
 <main id="main">
+    {% if messages %}
+    <div class="alert-container">
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     {% block content %}
     {% endblock content %}
 </main>
@@ -80,7 +80,7 @@
                     <div class="social-links mt-3">
                         <a href="https://instagram.com/alijonov.dev" class="instagram"><i class="bx bxl-instagram"></i></a>
                         <a href="https://t.me/By_Alik" class="telegram"><i class="bx bxl-telegram"></i></a>
-                        <a href="https://github.com/AlijonovMe" class="github"><i class="bx bxl-github"></i></a>
+                        <a href="https://github.com/AlijonovUz" class="github"><i class="bx bxl-github"></i></a>
                     </div>
                 </div>
 
