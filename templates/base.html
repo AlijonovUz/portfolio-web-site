@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Abdulbosit Alijonov</title>
+    <meta name="title" content="Abdulbosit Alijonov">
+    <meta name="description" content="Backend Dasturchi">
+    <meta content="backend,developer,alijonovuz,abdulbosit,alijonov" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'images/favicon.ico' %}" rel="icon">
+    <link href="{% static 'images/favicon.ico' %}" rel="apple-touch-icon">
+
+    {% include 'components/_fonts.html' %}
+    {% include 'components/_styles.html' %}
+</head>
+
+<body>
+
+{% if messages %}
+<div class="alert-container">
+    {% for message in messages %}
+    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo me-auto"><a href="https://alijonov.uz">alijonov.uz</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="{% url 'index' %}">Bosh sahifa</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'index' %}#about">Men haqimda</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'index' %}#services">Xizmatlar</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'index' %}#portfolio">Portfolio</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'index' %}#contact">Bog'lanish</a></li>
+                <li><a class="getstarted scrollto" href="{% url 'index' %}#contact">Buyurtma berish</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<main id="main">
+    {% block content %}
+    {% endblock content %}
+</main>
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h3>Abdulbosit Alijonov</h3>
+                    <p>
+                        <strong>Telefon:</strong> <a href="tel:+998912060722">+998 (91) 2060722</a><br>
+                        <strong>Elektron pochta:</strong> <a href="mailto:info@alijonov.uz" class="custom-link">info@alijonov.uz</a><br>
+                        <strong>Telegram:</strong> <a href="https://t.me/AlijonovUz">@AlijonovUz</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Men ijtimoiy tarmoqlarda</h4>
+                    <p>Ijtimoiy tarmoqlarda menga obuna bo'ling va meni kuzatib boring ;)</p>
+                    <div class="social-links mt-3">
+                        <a href="https://instagram.com/alijonov.dev" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="https://t.me/By_Alik" class="telegram"><i class="bx bxl-telegram"></i></a>
+                        <a href="https://github.com/AlijonovMe" class="github"><i class="bx bxl-github"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+        <div class="copyright">
+            © <strong><span>Abdulbosit Alijonov</span></strong>
+        </div>
+        <div class="credits">
+            2020-{{ current_year }}
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<div id="preloader"></div>
+<a href="#hero" class="back-to-top d-flex align-items-center justify-content-center scrollto"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+{% include 'components/_js.html' %}
+</body>
+</html>
