@@ -24,7 +24,17 @@ SECRET_KEY = 'django-insecure-8(+z&^=_5(j)16y05*ne+#*k#3nql1jf92)1aa31(e6!@8f#@$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+# CSRF settings
+CSRF_TRUSTED_ORIGINS = [
+    "https://alijonov.uz",
+]
+
+# SESSION settings
+SESSION_COOKIE_AGE = 3600
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_SAVE_EVERY_REQUEST = True
 
 # Application definition
 
