@@ -68,13 +68,13 @@
             {% endfor %}
         </div>
         {% else %}
-        <p class="no-comments">Hali izohlar yo‘q. Birinchi bo‘lib izoh qoldiring!</p>
+        <p class="no-comments">Hali izohlar yo'q. Birinchi bo'lib izoh qoldiring!</p>
         {% endif %}
 
         <!-- Comment Form -->
         <div class="comment-form">
             <h3>Izoh qoldirish</h3>
-            <form method="POST">
+            <form method="POST" action="{% url 'comment' object.slug %}">
                 {% csrf_token %}
                 <div class="form-group">
                     <label>Ism</label>
@@ -264,7 +264,6 @@
     .alert-error {
         background-color: #dc3545;  /* Qizil */
     }
-
 </style>
 
 {% endblock %}
